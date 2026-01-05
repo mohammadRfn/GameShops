@@ -1,0 +1,130 @@
+/* src/assets/main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animate.css */
+@import 'animate.css';
+
+/* src/assets/main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'animate.css';
+
+/* 👇 ایران یکان TTF - همه وزن‌ها */
+@font-face {
+  font-family: 'IRANYekan';
+  src: local('IRANYekan Regular'), 
+       local('IRANYekanRegular'),
+       url('/fonts/IRANYekanRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: local('IRANYekan Light'), 
+       local('IRANYekanLight'),
+       url('/fonts/IRANYekanLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: local('IRANYekan Medium'), 
+       local('IRANYekanMedium'),
+       url('/fonts/IRANYekanMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: local('IRANYekan ExtraBold'), 
+       local('IRANYekanExtraBold'),
+       url('/fonts/IRANYekanExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* فونت کلی پروژه */
+* {
+  font-family: 'IRANYekan', Tahoma, Arial, sans-serif !important;
+  direction: rtl;
+  text-align: right;
+}
+
+.text-gold { color: #ffd700; }
+
+
+/* Custom utilities */
+.text-gold {
+  color: #ffd700;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/* Custom utilities (اختیاری) */
+@layer utilities {
+  .text-gold {
+    color: #ffd700;
+  }
+}
+/* src/assets/main.css - انتهای فایل اضافه کن */
+@layer utilities {
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .transition-ultra {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Faster spin */
+  .animate-spin-fast {
+    animation: spin 1.5s linear infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite; /* از 20s به 8s */
+  }
+  
+  /* Smooth hover */
+  .hover-smooth {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  /* Glass hover */
+  .glass-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+/* Custom keyframes سریع‌تر */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-fast {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-fast {
+  animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
