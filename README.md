@@ -20,7 +20,7 @@ Welcome to **GameShop CRM**, a full-stack application built with **Laravel** (Ba
 
 ### Prerequisites
 
-- **PHP** 7.4 or higher
+- **PHP** 8.4
 - **Composer** for PHP dependencies
 - **Node.js** and **npm** for frontend dependencies
 
