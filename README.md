@@ -33,25 +33,28 @@ Welcome to **GameShop CRM**, a full-stack application built with **Laravel** (Ba
    ```bash
    git clone https://github.com/mohammadRfn/GameShops.git
    cd GameShops
-cd backend
-composer install
-Generate the application key:
+   
+2. **Install Backend Dependencies (Laravel)**
 
-php artisan key:generate
-Run the migrations to set up the database:
+   ```bash
+   cd backend
+   composer install
 
-php artisan migrate
-Go to the frontend directory and install the required Node.js dependencies:
+3. **Setup Environment File**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
 
-cd ../frontend
-npm install
-Start the Development Servers
+4. **Run Database Migrations**
+   ```bash
+   php artisan migrate
 
-Backend (Laravel):
+5. **Install Frontend Dependencies (Vue.js)**
+    ```bash
+    cd ../frontend
+    npm install
 
-php artisan serve
-
-
-Frontend (Vue.js):
-
-npm run dev
+6. **Start the Development Servers**
+    ```bash
+    php artisan serve
+    npm run dev
