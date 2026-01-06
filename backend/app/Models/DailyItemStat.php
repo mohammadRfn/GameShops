@@ -15,6 +15,7 @@ class DailyItemStat extends Model
         'shop_id',
         'item_id',
         'stat_date',
+        'product_name',
         'opening_stock',
         'closing_stock',
         'sold_quantity',
@@ -33,11 +34,18 @@ class DailyItemStat extends Model
         'sold_quantity'        => 'integer',
         'purchased_quantity'   => 'integer',
         'adjusted_in_quantity' => 'integer',
-        'adjusted_out_quantity'=> 'integer',
+        'adjusted_out_quantity' => 'integer',
         'revenue'              => 'decimal:2',
         'total_cost'           => 'decimal:2',
         'profit'               => 'decimal:2',
     ];
+ 
+    protected $appends = ['product_name']; 
+
+    public function getProductNameAttribute()
+    {
+        return $this->item?->name ?? 'Unknown';
+    }
 
     public function shop(): BelongsTo
     {

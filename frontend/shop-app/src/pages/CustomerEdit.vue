@@ -106,7 +106,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../api/axios'; 
 
 export default {
   data() {
@@ -130,7 +130,7 @@ export default {
   methods: {
     async fetchCustomerData() {
       try {
-        const response = await axios.get(`/api/customers/${this.$route.params.id}`);
+        const response = await api.get(`customers/${this.$route.params.id}`);  
         this.customer = response.data.data || response.data;
         
         // ✅ Sync form with customer data
@@ -160,7 +160,7 @@ export default {
           return;
         }
         
-        const response = await axios.put(`/api/customers/${this.form.id}`, this.form);
+        const response = await api.put(`customers/${this.form.id}`, this.form);  
         
         // Success
         this.$toast?.success('اطلاعات مشتری بروزرسانی شد');

@@ -333,7 +333,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../api/axios'; 
 
 export default {
   name: 'CustomerShow',
@@ -514,7 +514,7 @@ export default {
 
       try {
         // Load ALL data without backend filters
-        const response = await axios.get(`/api/customers/${this.$route.params.id}`);
+        const response = await api.get(`/customers/${this.$route.params.id}`);
 
         this.rawResponse = response;
         this.customer = response.data.data || response.data;

@@ -147,7 +147,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../api/axios';
 
 export default {
   name: 'CustomerCreate',
@@ -186,7 +186,7 @@ export default {
           return;
         }
 
-        const response = await axios.post('/api/customers', this.form);
+        const response = await api.post('customers', this.form);
         
         // Success feedback
         this.$toast?.success(`مشتری "${this.form.name}" با موفقیت ایجاد شد!`);
